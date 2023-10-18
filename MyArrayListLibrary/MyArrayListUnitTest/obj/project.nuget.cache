@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "aQGTLFpbcKB4TfBAknEPX0c3bJYTIhofpBznlDEHCNY9kHI0Q4LOcE/JMUiIDx7Ocfd0dPVi1fT5RcFg8tmp+A==",
+  "dgSpecHash": "w4BBLwgI+4gjZg5IA/o1VsvdneCcxr6oR00/ZjOpf36kRAaXGzz4EnIjZnfvuy0+bALy3zKC6DehSKKgJv7fiA==",
   "success": true,
-  "projectFilePath": "E:\\!NEU_Szoftver\\Teszt\\MyArrayListLibrary\\MyArrayListUnitTest\\MyArrayListUnitTest.csproj",
+  "projectFilePath": "E:\\!NEU_Szoftver\\Teszt\\Gitlab\\adatszerkezetek\\MyArrayListLibrary\\MyArrayListUnitTest\\MyArrayListUnitTest.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\PatrikPC\\.nuget\\packages\\coverlet.collector\\3.2.0\\coverlet.collector.3.2.0.nupkg.sha512",
     "C:\\Users\\PatrikPC\\.nuget\\packages\\microsoft.codecoverage\\17.7.1\\microsoft.codecoverage.17.7.1.nupkg.sha512",

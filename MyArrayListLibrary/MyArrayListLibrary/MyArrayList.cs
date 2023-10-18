@@ -1,86 +1,90 @@
 ﻿namespace MyArrayListLibrary;
 
-public class MyArrayList
+public class MyArrayList<T>
 {
-    private string[] items;
-    private int size;
-    private const int InitialCapacity = 10;
-    
-    public int Count
-    {
-        get { return size; }
-    }
-    
-    public bool IsEmpty
-    {
-        get { return size == 0; }
-    }
-    
-    public MyArrayList()
-    {
-        items = new string[InitialCapacity];
-        size = 0;
-    }
-    
-    public bool Add(string item)
-    {
-        EnsureCapacity();
-        items[size++] = item;
-        return true;
-    }
-    
-    public bool Remove(string item)
-    {
-        int index = IndexOf(item);
-        if (index == -1)
-            return false;
+        private T?[] _items;
+        private int _size;
+        private const int InitialCapacity = 10;
 
-        for (int i = index; i < size - 1; i++)
+        public int Count => _size;
+        public bool IsEmpty => _size == 0;
+
+        public MyArrayList()
         {
-            items[i] = items[i + 1];
+            _items = new T?[InitialCapacity];
+            _size = 0;
         }
 
-        size--;
-        items[size] = null; 
-        return true;
-    }
-    
-    public void Clear()
-    {
-        items = Array.Empty<string>();
-        size = 0;
-    }
-    
-    public int IndexOf(string item)
-    {
-        for (int i = 0; i < size; i++)
+        public bool Add(T? item)
         {
-            if (items[i] == item) return i;
-        }
-        return -1;
-    } 
-    
-    public string[] ToArray()
-    {
-        var resized = items;
-        Array.Resize(ref resized, size);
-        return resized;
-    }
-    
-    private bool EnsureCapacity()
-    {
-        if (size == items.Length)
-        {
-            int newCapacity = items.Length * 2;
-            Array.Resize(ref items, newCapacity);
+            if (!EnsureCapacity()) return false;
+            _items[_size++] = item;
             return true;
         }
 
-        return false;
-    }
-    
-    public string this[int index] {
-        get => index >= size ? throw new IndexOutOfRangeException() : items[index];
-        set => items[index] = value;
-    }
+        public bool Remove(T item)
+        {
+            int index = IndexOf(item);
+            if (index == -1)
+                return false;
+
+            for (int i = index; i < _size - 1; i++)
+            {
+                _items[i] = _items[i + 1];
+            }
+
+            _size--;
+            _items[_size] = default;
+            return true;
+        }
+
+        public void Clear()
+        {
+            _items = new T[InitialCapacity];
+            _size = 0;
+        }
+
+        public int IndexOf(T item)
+        {
+            for (int i = 0; i < _size; i++)
+            {
+                if (EqualityComparer<T>.Default.Equals(_items[i], item)) return i;
+            }
+            return -1;
+        }
+
+        public T[] ToArray()
+        {
+            var resized = new T[_size];
+            Array.Copy(_items, resized, _size);
+            return resized;
+        }
+
+        private bool EnsureCapacity()
+        {
+            if (_size < _items.Length)
+            {
+                int newCapacity = _items.Length * 2;
+                Array.Resize(ref _items, newCapacity);
+                return true;
+            }
+
+            return false;
+        }
+
+        public T? this[int index]
+        {
+            get
+            {
+                if (index >= _size)
+                    throw new IndexOutOfRangeException();
+                return _items[index];
+            }
+            set
+            {
+                if (index >= _size)
+                    throw new IndexOutOfRangeException();
+                _items[index] = value;
+            }
+        }
 }

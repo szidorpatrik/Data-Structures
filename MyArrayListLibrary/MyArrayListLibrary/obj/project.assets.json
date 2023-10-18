@@ -14,11 +14,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "E:\\!NEU_Szoftver\\Teszt\\MyArrayListLibrary\\MyArrayListLibrary\\MyArrayListLibrary.csproj",
+      "projectUniqueName": "E:\\!NEU_Szoftver\\Teszt\\Gitlab\\adatszerkezetek\\MyArrayListLibrary\\MyArrayListLibrary\\MyArrayListLibrary.csproj",
       "projectName": "MyArrayListLibrary",
-      "projectPath": "E:\\!NEU_Szoftver\\Teszt\\MyArrayListLibrary\\MyArrayListLibrary\\MyArrayListLibrary.csproj",
+      "projectPath": "E:\\!NEU_Szoftver\\Teszt\\Gitlab\\adatszerkezetek\\MyArrayListLibrary\\MyArrayListLibrary\\MyArrayListLibrary.csproj",
       "packagesPath": "C:\\Users\\PatrikPC\\.nuget\\packages\\",
-      "outputPath": "E:\\!NEU_Szoftver\\Teszt\\MyArrayListLibrary\\MyArrayListLibrary\\obj\\",
+      "outputPath": "E:\\!NEU_Szoftver\\Teszt\\Gitlab\\adatszerkezetek\\MyArrayListLibrary\\MyArrayListLibrary\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

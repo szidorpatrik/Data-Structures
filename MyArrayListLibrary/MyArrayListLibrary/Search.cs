@@ -4,7 +4,6 @@ namespace MyArrayListLibrary;
 
 public class Search
 {
-    
     public static int LinearSearch<T>(T[] array, T whatToSearch)
     {
         for (int i = 0; i < array.Length; i++)
