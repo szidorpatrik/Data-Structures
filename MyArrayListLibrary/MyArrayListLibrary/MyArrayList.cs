@@ -6,18 +6,17 @@ public class MyArrayList<T>
         private int _size;
         private const int InitialCapacity = 10;
 
-        public int Count => _size;
+        public int Count => ToArray().Length;
         public bool IsEmpty => _size == 0;
 
         public MyArrayList()
         {
-            _items = new T?[InitialCapacity];
-            _size = 0;
+            Clear();
         }
 
         public bool Add(T? item)
         {
-            if (!EnsureCapacity()) return false;
+            EnsureCapacity();
             _items[_size++] = item;
             return true;
         }
@@ -64,7 +63,7 @@ public class MyArrayList<T>
         {
             if (_size < _items.Length)
             {
-                int newCapacity = _items.Length * 2;
+                int newCapacity = _items.Length + 1;
                 Array.Resize(ref _items, newCapacity);
                 return true;
             }
@@ -86,5 +85,10 @@ public class MyArrayList<T>
                     throw new IndexOutOfRangeException();
                 _items[index] = value;
             }
+        }
+
+        public override string ToString()
+        {
+            return string.Join(" ", _items);
         }
 }
