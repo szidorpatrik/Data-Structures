@@ -1,0 +1,11 @@
+E:\!NEU_Szoftver\Teszt\MyArrayListLibrary\MyArrayListLibrary\bin\Debug\net7.0\MyArrayListLibrary.deps.json
+E:\!NEU_Szoftver\Teszt\MyArrayListLibrary\MyArrayListLibrary\bin\Debug\net7.0\MyArrayListLibrary.dll
+E:\!NEU_Szoftver\Teszt\MyArrayListLibrary\MyArrayListLibrary\bin\Debug\net7.0\MyArrayListLibrary.pdb
+E:\!NEU_Szoftver\Teszt\MyArrayListLibrary\MyArrayListLibrary\obj\Debug\net7.0\MyArrayListLibrary.GeneratedMSBuildEditorConfig.editorconfig
+E:\!NEU_Szoftver\Teszt\MyArrayListLibrary\MyArrayListLibrary\obj\Debug\net7.0\MyArrayListLibrary.AssemblyInfoInputs.cache
+E:\!NEU_Szoftver\Teszt\MyArrayListLibrary\MyArrayListLibrary\obj\Debug\net7.0\MyArrayListLibrary.AssemblyInfo.cs
+E:\!NEU_Szoftver\Teszt\MyArrayListLibrary\MyArrayListLibrary\obj\Debug\net7.0\MyArrayListLibrary.csproj.CoreCompileInputs.cache
+E:\!NEU_Szoftver\Teszt\MyArrayListLibrary\MyArrayListLibrary\obj\Debug\net7.0\MyArrayListLibrary.dll
+E:\!NEU_Szoftver\Teszt\MyArrayListLibrary\MyArrayListLibrary\obj\Debug\net7.0\refint\MyArrayListLibrary.dll
+E:\!NEU_Szoftver\Teszt\MyArrayListLibrary\MyArrayListLibrary\obj\Debug\net7.0\MyArrayListLibrary.pdb
+E:\!NEU_Szoftver\Teszt\MyArrayListLibrary\MyArrayListLibrary\obj\Debug\net7.0\ref\MyArrayListLibrary.dll
