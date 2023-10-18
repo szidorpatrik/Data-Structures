@@ -1,5 +1,5 @@
 # Adatszerkezetek
-
+Class libraryt készítek, amiben az adatszerkezeteim vannak.
 
 
 ## Getting started
