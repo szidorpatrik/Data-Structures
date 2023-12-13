@@ -79,4 +79,29 @@ public class MyLinkedListUnitTest
         list.RemoveAt(0);
         Assert.AreEqual(0, list.Count);
     }
+
+    [TestMethod]
+    public void LinkedListInsertItemAtIndex()
+    {
+        MyLinkedList<int> list = new();
+
+        Assert.ThrowsException<ArgumentOutOfRangeException>(() => list.InsertAt(-1, -100));
+        
+        list.InsertAt(0, 10);
+        Assert.AreEqual(1, list.Count);
+        Assert.AreEqual(10,list.Head.Value);
+        
+        list.InsertAt(0, 20);
+        Assert.AreEqual(20,list.Head.Value);
+        Assert.AreEqual(10,list.Head.Next.Value);
+        Assert.AreEqual(2, list.Count);
+        
+        list.InsertAt(3, 30);
+        Assert.AreEqual(3, list.Count);
+        Assert.AreEqual(30,list.Head.Next.Next.Value);
+        
+        list.InsertAt(500, 500);
+        Assert.AreEqual(4, list.Count);
+        Assert.AreEqual(500,list.Head.Next.Next.Next.Value);
+    }
 }
