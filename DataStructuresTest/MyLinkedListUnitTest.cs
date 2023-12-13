@@ -28,6 +28,29 @@ public class MyLinkedListUnitTest
         Assert.AreEqual(2, list.Count);
         Assert.AreEqual(null, list.Head?.Next?.Next);
     }
-    
-    
+
+    [TestMethod]
+    public void LinkedListRemoveItem()
+    {
+        MyLinkedList<int> list = new();
+        Assert.ThrowsException<ArgumentException>(() => list.Remove(0));
+        
+        list.Add(5);
+        Assert.AreEqual(1, list.Count);
+        
+        list.Remove(5);
+        Assert.AreEqual(0, list.Count);
+        
+        Assert.ThrowsException<ArgumentException>(() => list.Remove(5));
+        
+        list.Add(10);
+        list.Add(20);
+        Assert.AreEqual(2, list.Count);
+        
+        list.Remove(20);
+        Assert.AreEqual(1, list.Count);
+        
+        list.Remove(10);
+        Assert.AreEqual(0, list.Count);
+    }
 }

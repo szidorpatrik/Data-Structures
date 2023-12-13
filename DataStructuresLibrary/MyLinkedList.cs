@@ -11,7 +11,8 @@ public class MyLinkedList<T>
     }
 
     public Node? Head { get; private set; }
-    public int Count { get; private set; }
+
+    public int Count { get => GetCount(); }
 
     public void Add(T item)
     {
@@ -22,6 +23,44 @@ public class MyLinkedList<T>
         };
 
         Head = newNode;
-        Count++;
+    }
+
+    private int GetCount()
+    {
+        int count = 0;
+        Node current = Head;
+        
+        while (current != null)
+        {
+            current = current.Next;
+            count++;
+        }
+
+        return count;
+    }
+    
+    public void Remove(T item)
+    {
+        if (Head is null) throw new ArgumentException("The linked list is empty!");
+
+        Node? current = Head;
+        Node? previous = null;
+
+        while (current != null && !current.Value.Equals(item))
+        {
+            previous = current;
+            current = current.Next;
+        }
+
+        if (current is null) throw new ArgumentException("This item does not exists!");
+
+        if (previous == null)
+        {
+            Head = current.Next;
+        }
+        else
+        {
+            previous.Next = current.Next;
+        }
     }
 }
