@@ -1,3 +1,4 @@
+using System.Text.Json.Serialization;
 using System.Xml;
 
 namespace DataStructuresLibrary;
@@ -12,7 +13,10 @@ public class MyLinkedList<T>
 
     public Node? Head { get; private set; }
 
-    public int Count { get => GetCount(); }
+    public int Count
+    {
+        get => GetCount();
+    }
 
     public void Add(T item)
     {
@@ -33,23 +37,17 @@ public class MyLinkedList<T>
         {
             Value = item
         };
-        
+
         if (Head is null)
         {
             Head = newNode;
             return;
         }
-        
-        int count = 0;
+
         Node current = Head;
         Node previous = null;
-        
-        while (current != null && count != index)
-        {
-            previous = current;
-            current = current.Next;
-            count++;
-        }
+
+        IncreasePointerToIndex(index, ref current, ref previous);
 
         if (current is null && previous != null)
         {
@@ -62,16 +60,16 @@ public class MyLinkedList<T>
             newNode.Next = current;
             return;
         }
-        
+
         previous.Next = newNode;
         newNode.Next = current;
     }
-    
+
     private int GetCount()
     {
         int count = 0;
         Node current = Head;
-        
+
         while (current != null)
         {
             current = current.Next;
@@ -80,7 +78,7 @@ public class MyLinkedList<T>
 
         return count;
     }
-    
+
     public void Remove(T item)
     {
         if (Head is null) throw new ArgumentException("The linked list is empty!");
@@ -88,11 +86,7 @@ public class MyLinkedList<T>
         Node? current = Head;
         Node? previous = null;
 
-        while (current != null && !current.Value.Equals(item))
-        {
-            previous = current;
-            current = current.Next;
-        }
+        IncreasePointerToItem(item, ref current, ref previous);
 
         if (current is null) throw new ArgumentException("This item does not exists!");
 
@@ -105,26 +99,19 @@ public class MyLinkedList<T>
             previous.Next = current.Next;
         }
     }
-    
+
     public void RemoveAt(int index)
     {
         if (index < 0 || index > Count) throw new ArgumentOutOfRangeException();
         if (Head is null) throw new ArgumentException("The linked list is empty!");
-        
+
         Node? current = Head;
         Node? previous = null;
-        
-        int counter = 0;
 
-        while (current != null && counter != index)
-        {
-            previous = current;
-            current = current.Next;
-            counter++;
-        }
-        
+        IncreasePointerToIndex(index, ref current, ref previous);
+
         if (current is null) throw new ArgumentOutOfRangeException();
-        
+
         if (previous == null)
         {
             Head = current.Next;
@@ -132,6 +119,26 @@ public class MyLinkedList<T>
         else
         {
             previous.Next = current.Next;
+        }
+    }
+
+    private static void IncreasePointerToIndex(int index, ref Node current, ref Node previous)
+    {
+        int counter = 0;
+        while (current != null && counter != index)
+        {
+            previous = current;
+            current = current.Next;
+            counter++;
+        }
+    }
+
+    private void IncreasePointerToItem(T item, ref Node current, ref Node? previous)
+    {
+        while (current != null && !current.Value.Equals(item))
+        {
+            previous = current;
+            current = current.Next;
         }
     }
 }
