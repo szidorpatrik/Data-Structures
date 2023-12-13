@@ -63,4 +63,33 @@ public class MyLinkedList<T>
             previous.Next = current.Next;
         }
     }
+    
+    public void RemoveAt(int index)
+    {
+        if (index < 0 || index > GetCount()) throw new ArgumentOutOfRangeException();
+        if (Head is null) throw new ArgumentException("The linked list is empty!");
+        
+        Node? current = Head;
+        Node? previous = null;
+        
+        int counter = 0;
+
+        while (current != null && counter != index)
+        {
+            previous = current;
+            current = current.Next;
+            counter++;
+        }
+        
+        if (current is null) throw new ArgumentOutOfRangeException();
+        
+        if (previous == null)
+        {
+            Head = current.Next;
+        }
+        else
+        {
+            previous.Next = current.Next;
+        }
+    }
 }

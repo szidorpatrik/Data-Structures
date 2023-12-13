@@ -53,4 +53,30 @@ public class MyLinkedListUnitTest
         list.Remove(10);
         Assert.AreEqual(0, list.Count);
     }
+
+    [TestMethod]
+    public void LinkedListRemoveItemAtIndex()
+    {
+        MyLinkedList<int> list = new();
+        
+        Assert.ThrowsException<ArgumentException>(() => list.RemoveAt(0));
+        Assert.ThrowsException<ArgumentOutOfRangeException>(() => list.RemoveAt(-1));
+        Assert.ThrowsException<ArgumentOutOfRangeException>(() => list.RemoveAt(99));
+        
+        list.Add(5);
+        list.RemoveAt(0);
+        Assert.AreEqual(0, list.Count);
+        
+        list.Add(10);
+        list.Add(20);
+        list.RemoveAt(0);
+        list.RemoveAt(0);
+        Assert.AreEqual(0, list.Count);
+        
+        list.Add(10);
+        list.Add(20);
+        list.RemoveAt(1);
+        list.RemoveAt(0);
+        Assert.AreEqual(0, list.Count);
+    }
 }
