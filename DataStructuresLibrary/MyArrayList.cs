@@ -1,4 +1,4 @@
-﻿namespace MyArrayListLibrary;
+﻿namespace DataStructuresLibrary;
 
 public class MyArrayList<T>
 {

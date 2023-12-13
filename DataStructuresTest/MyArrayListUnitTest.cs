@@ -1,9 +1,9 @@
-using MyArrayListLibrary;
+using DataStructuresLibrary;
 
 namespace MyArrayListUnitTest;
 
 [TestClass]
-public class UnitTest1
+public class MyArrayListUnitTest
 {
     MyArrayList<string> _arrayListStr = new();
     MyArrayList<int> _arrayListInt = new();

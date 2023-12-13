@@ -87,6 +87,8 @@ csx/
 AppPackages/
 
 # Others
+.idea
+.vs
 sql/
 *.Cache
 ClientBin/
