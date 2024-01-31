@@ -16,4 +16,10 @@ public class MyStack<T>
         Items = new T[Size];
         _currentIndex = -1;
     }
+
+    public void Push(T item)
+    {
+        if (_currentIndex + 1 >= Size) throw new ArgumentException("Stack Overflow");
+        Items[++_currentIndex] = item;
+    }
 }
