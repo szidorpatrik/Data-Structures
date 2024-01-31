@@ -22,4 +22,14 @@ public class MyStack<T>
         if (_currentIndex + 1 >= Size) throw new ArgumentException("Stack Overflow");
         Items[++_currentIndex] = item;
     }
+
+    public T Pop()
+    {
+        if (Count < 1) throw new ArgumentException("Stack Underflow");
+        return Items[_currentIndex--];
+    }
+
+    public T[] ToArray() => Items[..(_currentIndex + 1)];
+    
+    public override string ToString() => "[" + string.Join(", ", ToArray()) + "]";
 }
