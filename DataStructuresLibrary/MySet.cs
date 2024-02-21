@@ -3,7 +3,7 @@ using System.Numerics;
 namespace DataStructuresLibrary
 {
     public class MySet<T> where T : IBinaryInteger<T>
-{
+    {
         private sealed class Node
         {
             public Node? Left { get; set; }
@@ -44,6 +44,23 @@ namespace DataStructuresLibrary
                 current.Right = AddRecursive(current.Right, value, ref isNewNode);
 
             return current;
+        }
+
+        public bool Exists(T value)
+        {
+            return FindNode(_root, value) is not null;
+        }
+        
+        private Node? FindNode(Node? current, T value)
+        {
+            if (current == null) return null;
+
+            return current.Value.CompareTo(value) switch
+            {
+                < 0 => FindNode(current.Right, value),
+                > 0 => FindNode(current.Left, value),
+                _ => current
+            };
         }
     }
 }

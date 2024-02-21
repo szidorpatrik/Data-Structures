@@ -31,6 +31,7 @@ public class MySetUnitTest
         _set.Add(-1);
         Assert.AreEqual(3, _set.Count);
     }
+
     [TestMethod]
     [DataRow(new[] { 1, 3 })]
     [DataRow(new[] { -1, 2, -3, 6 })]
@@ -43,6 +44,7 @@ public class MySetUnitTest
 
         Assert.AreEqual(items.Length, _set.Count);
     }
+
     [TestMethod]
     [DataRow(1, 10)]
     [DataRow(2, 20)]
@@ -60,5 +62,32 @@ public class MySetUnitTest
 
         _set.Add(val2);
         Assert.AreEqual(2, _set.Count);
+    }
+
+    [TestMethod]
+    [DataRow(23)]
+    [DataRow(454)]
+    [DataRow(-187)]
+    public void FindExistingValue(int value)
+    {
+        _set.Add(0);
+        _set.Add(1);
+        _set.Add(-1);
+        _set.Add(value);
+
+        Assert.AreEqual(true, _set.Exists(value));
+    }
+    
+    [TestMethod]
+    [DataRow(23)]
+    [DataRow(454)]
+    [DataRow(-187)]
+    public void FindNotExistingValue(int value)
+    {
+        _set.Add(0);
+        _set.Add(1);
+        _set.Add(-1);
+
+        Assert.AreEqual(false, _set.Exists(value));
     }
 }
