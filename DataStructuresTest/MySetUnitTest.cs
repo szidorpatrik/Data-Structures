@@ -53,7 +53,7 @@ public class MySetUnitTest
     {
         _set.Add(val1);
         Assert.AreEqual(1, _set.Count);
-        
+
         _set.Add(val1);
         Assert.AreEqual(1, _set.Count);
 
@@ -77,7 +77,7 @@ public class MySetUnitTest
 
         Assert.AreEqual(true, _set.Exists(value));
     }
-    
+
     [TestMethod]
     [DataRow(23)]
     [DataRow(454)]

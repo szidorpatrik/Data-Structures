@@ -34,9 +34,6 @@ namespace DataStructuresLibrary
                 return new Node(value);
             }
 
-            if (value.CompareTo(current.Value) == 0)
-                return current;
-
             if (value.CompareTo(current.Value) < 0)
                 current.Left = AddRecursive(current.Left, value, ref isNewNode);
 
@@ -50,7 +47,7 @@ namespace DataStructuresLibrary
         {
             return FindNode(_root, value) is not null;
         }
-        
+
         private Node? FindNode(Node? current, T value)
         {
             if (current == null) return null;
