@@ -1,6 +1,6 @@
 using DataStructuresLibrary;
 
-namespace MyArrayListUnitTest;
+namespace DataStructuresTest;
 
 [TestClass]
 public class MyArrayListUnitTest

@@ -1,6 +1,6 @@
 using DataStructuresLibrary;
 
-namespace MyLinkedListUnitTest;
+namespace DataStructuresTest;
 
 [TestClass]
 public class MyLinkedListUnitTest
