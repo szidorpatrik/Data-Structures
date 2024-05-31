@@ -4,9 +4,8 @@ Some implementations of my data structures.
 ## Table of content
 - [MyArrayList\<T>](#myarraylist)
 - [MyLinkedList\<T>](#mylinkedlist)
-- [MySet\<T>](#myarraylist)
-- MyQueue\<T>
-- [MyArrayList\<T>](#myarraylist)
+- [MySet\<T>](#myset)
+- [MyStack\<T>](#mystack)
 
 ---
 ### MyArrayList
